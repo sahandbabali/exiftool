@@ -45,13 +45,19 @@ function handleFileSelect(evt) {
       // console.log(imagedata);
       var exifObj = piexif.load(imagedata);
       // console.log(exifObj);
+      document.getElementById(
+        "exifdiv"
+      ).innerHTML += `<div class="mb-3"><button type="button" class="btn btn-primary">Remove and Download</button> <button type="button" class="btn btn-primary">Update and Download</button></div> <br>
+      `;
       for (var ifd in exifObj) {
         if (ifd == "thumbnail") {
           continue;
         }
         console.log("-" + ifd);
         //
-        document.getElementById("exifdiv").innerHTML += `- ${ifd} <br>`;
+        document.getElementById(
+          "exifdiv"
+        ).innerHTML += `<span class="badge rounded-pill text-bg-primary">${ifd}</span><br>`;
 
         //
         for (var tag in exifObj[ifd]) {
@@ -61,7 +67,8 @@ function handleFileSelect(evt) {
           //
           document.getElementById(
             "exifdiv"
-          ).innerHTML += `----${piexif.TAGS[ifd][tag]["name"]}: ${exifObj[ifd][tag]} <br>`;
+          ).innerHTML += `<label class="form-label">${piexif.TAGS[ifd][tag]["name"]}</label>
+          <input class="form-control form-control-sm" type="text" value="${exifObj[ifd][tag]}" aria-label="input value"> <br>`;
 
           //
         }
