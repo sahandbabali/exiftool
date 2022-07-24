@@ -68,7 +68,7 @@ function handleFileSelect(evt) {
           document.getElementById(
             "exifdiv"
           ).innerHTML += `<label class="form-label">${piexif.TAGS[ifd][tag]["name"]}</label>
-          <input class="form-control form-control-sm" type="text" value="${exifObj[ifd][tag]}" aria-label="input value"> <br>`;
+          <input class="form-control form-control-sm mb-3" type="text" value="${exifObj[ifd][tag]}" aria-label="input value"> `;
 
           //
         }
