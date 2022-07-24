@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>EXIF Tool</title>
+      <script src="./piexif.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+
+      <style>
+            body {
+                  font-family: Open sans;
+            }
+      </style>
+</head>
+
+<body>
+
+      <div class="container">
+            <!-- start of navbar -->
+            <nav class="navbar bg-light">
+                  <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                              <img src="./logo.png" alt="" width="30" class="d-inline-block align-text-top">
+                              EXIF Tool
+                        </a>
+                  </div>
+            </nav>
+            <!-- end of navbar -->
+
+            <!-- start of main card -->
+            <div class="card mt-3">
+                  <div class="card-body">
+                        <h2>Upload a JPEG file to view or edit the EXIF data</h2>
+                        <div class="mb-3">
+                              <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+                              <input class="form-control" accept="image/jpeg" type="file" id="file">
+                        </div>
+                  </div>
+            </div>
+            <!-- end of main card -->
+
+            <section id="secondrow">
+
+            </section>
+
+
+
+
+      </div>
+      <!-- end of main container -->
+
+      <script src="./app.js"></script>
+</body>
+
+</html>
