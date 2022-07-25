@@ -47,7 +47,7 @@ function handleFileSelect(evt) {
       // console.log(exifObj);
       document.getElementById(
         "exifdiv"
-      ).innerHTML += `<div class="mb-3"><button type="button" class="btn btn-primary">Remove and Download</button> <button type="button" class="btn btn-primary">Update and Download</button></div> <br>
+      ).innerHTML += `<div class="mb-3"><button onClick="removeanddownload()" type="button" class="btn btn-primary">Remove and Download</button> <button type="button" class="btn btn-primary disabled">Update and Download</button></div> <br>
       `;
       for (var ifd in exifObj) {
         if (ifd == "thumbnail") {
@@ -116,4 +116,12 @@ function handleFileSelect(evt) {
   //     $("#resized").prepend(el);
   //   };
   //   reader.readAsDataURL(file);
+}
+
+function removeanddownload() {
+  var jpegnoexif = piexif.remove(imagedata);
+  var a = document.createElement("a"); //Create <a>
+  a.href = jpegnoexif; //Image Base64 Goes here
+  a.download = "Image.jpeg"; //File name Here
+  a.click(); //Downloaded file
 }
